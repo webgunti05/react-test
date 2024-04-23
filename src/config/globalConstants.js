@@ -1,8 +1,9 @@
 export const AppStyleConstants = {
     BG_COLORS: {
         BG_WHITE:'#fff',
-        BG_GRAY : '#f5f5f5',
+        BG_GRAY : '#ddd',
         BORDER_GRAY: '#ccc',
+        BG_MASK:'rgba(0,0,0,0.6)'
     },
     COLORS: {
         PRIMARY_FONT_COLOR:'#121212',
@@ -31,7 +32,22 @@ export const AppStyleConstants = {
 export const AppContentConstants = {
     TITLES: {
         FILTERS: 'FILTERS',
-        SURPRISE: 'SURPRISE ME'
+        SURPRISE: 'SURPRISE ME',
+        FILTER_SEARCH: 'Search by filter',
+        CLEAR_ALL: 'Clear All',
+        APPLY: 'Apply'
+    },
+    PLACEHOLDERS: {
+        SEARCH_PLACEHOLDER: 'Search from the world`s antique collection '
+    },
+    LABELS:{
+        DYNASTY:'Select Dynasty',
+        PERIOD: 'Select Period',
+        MATERIAL: 'Select Material',
+        REGION: 'Select Region'
+    },
+    OPTIONS:{
+        ALL:'All'
     }
 
 }

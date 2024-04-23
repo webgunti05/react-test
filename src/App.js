@@ -1,23 +1,49 @@
 import React, {useState, useEffect, Suspense, lazy} from 'react';
 import './App.css';
 import * as STYLE from './styles/appStyles';
-import HeaderComponent from './components/header';
+import TopBar from './components/topBar';
 import LoaderComponent from './components/loader';
-import { getAllProducts } from './services/apiService';
+import { getAllProducts, filterProductsByRange } from './services/apiService';
+import FilterSearch from './components/filterSearch';
 
 const ProductComponent = lazy(() => import('./components/products'));
 
 function App() {
 
   const [products, setProducts] = useState([]);
-  //const [loader, setLoader] = useState(false);
+  const [searchVal, setSearchVal] = useState("");
+  const [filterProducts, setFilterProducts] = useState("");
+  const [openFilter, setOpenFilter] = useState(false);
 
   const getProducts = async() => {
-    //setLoader(true);
     const data = await getAllProducts();
     if(data){
       setProducts(data);
-      //setLoader(false);
+    }
+  }
+
+  const SearchProducts = e => {
+    const searchValue = e?.target?.value;
+    setSearchVal(searchValue);
+    if(searchValue !== ""){
+      const filterItems = products?.filter(item => {
+        return Object.values(item).join('').toLowerCase().includes(searchVal.toLowerCase());
+      });
+      console.log({filterItems})
+      setFilterProducts(filterItems);
+    } else{
+      setFilterProducts(products);
+    }
+  }
+
+  const OpenFilterSearch = () => {
+    setOpenFilter(true);
+  }
+
+  const filterProductsRange = async(min, max) => {
+    const data = await filterProductsByRange(min, max);
+    if(data){
+      setProducts(data);
     }
   }
 
@@ -27,10 +53,18 @@ function App() {
 
   return (
     <STYLE.AppMainBg>
-      <HeaderComponent />
+      <TopBar 
+        onSearchProducts={(e) => SearchProducts(e)}
+        onOpenFilterSearch={OpenFilterSearch}
+        />
       <Suspense fallback={<LoaderComponent />}>
-          <ProductComponent productsList={products} />
+          <ProductComponent 
+            productsList={products} 
+            searchItem={searchVal} 
+            filterProductsList={filterProducts}
+             />
       </Suspense>
+      {openFilter && <FilterSearch onFilterProductsRange={(min, max) => filterProductsRange(min, max)} />}
      
     </STYLE.AppMainBg>
   );
