@@ -3,7 +3,7 @@ import * as STYLE from '../styles/appStyles';
 import { AppContentConstants } from '../config/globalConstants'; 
 import MultiRangeSlider from "multi-range-slider-react";
 
-const FilterSearch = ({onFilterProductsRange}) => {
+const FilterSearch = ({onFilterProductsRange, getProducts, setOpenFilter}) => {
     const [minValue, setMinValue] = useState(0);
     const [maxValue, setMaxValue] = useState(100);
 
@@ -11,6 +11,13 @@ const handleInput = (e) => {
 	setMinValue(e.minValue);
 	setMaxValue(e.maxValue);
 };
+
+const onClearFilters = () => {
+  getProducts();
+  setMinValue(0);
+	setMaxValue(100);
+  setOpenFilter(false);
+}
     return (
       <>
         <STYLE.FilterSearchMask />
@@ -65,7 +72,7 @@ const handleInput = (e) => {
 
 
           <STYLE.FilterActions>
-                <STYLE.ActionButton clearbtn="true">{AppContentConstants.TITLES.CLEAR_ALL}</STYLE.ActionButton>
+                <STYLE.ActionButton clearbtn="true" onClick={onClearFilters}>{AppContentConstants.TITLES.CLEAR_ALL}</STYLE.ActionButton>
                 <STYLE.ActionButton onClick={() => onFilterProductsRange(minValue, maxValue)} applybtn="true">{AppContentConstants.TITLES.APPLY}</STYLE.ActionButton>
           </STYLE.FilterActions>
 

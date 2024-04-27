@@ -7,13 +7,24 @@ export const AppMainBg = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
-  display: flex;
+  width:100%;
+  display:flex;
   justify-content: space-between;
+  @media screen and (max-width:599px){
+    width: 100%;
+    flex-direction:column;
+  }
 `;
 
 export const LeftHeader = styled.div`
   display: flex;
-  width: 80%;
+  width: 70%;
+  @media screen and (max-width:1024px){
+    width: auto;
+  }
+  @media screen and (max-width:599px){
+    width: 100%;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -36,6 +47,10 @@ export const SearchInput = styled.input`
     outline: none;
     box-shadow: 0px 0px 1px ${AppStyleConstants.COLORS.PRIMARY_FONT_COLOR};
   }
+  @media screen and (max-width:599px){
+    width: 100%;
+    margin-bottom:20px;
+  }
 `;
 export const FilterButton = styled.button`
   margin: ${(props) => (props.position === "right" ? "0px" : "0 20px")};
@@ -51,6 +66,9 @@ export const FilterButton = styled.button`
       ? AppStyleConstants.COLORS.SECONDARY_FONT_COLOR
       : AppStyleConstants.COLORS.PRIMARY_FONT_COLOR};
   cursor: pointer;
+  @media screen and (max-width:599px){
+    margin: ${(props) => (props.position === "right" ? "0px" : "0px")};
+  }
 `;
 
 export const FilterIcon = styled.img`
@@ -61,7 +79,10 @@ export const FilterIcon = styled.img`
   right: 5px;
 `;
 
-export const RightHeader = styled.div``;
+export const RightHeader = styled.div`
+display: flex;
+  justify-content: space-between;
+`;
 
 export const ProductContainer = styled.div`
   padding: 30px 0px;
@@ -89,11 +110,32 @@ export const CardList = styled("li")`
   box-sizing: border-box;
   box-shadow: 0px 0px 6px ${AppStyleConstants.BG_COLORS.BORDER_GRAY};
   overflow: hidden;
+  position:relative;
+  @media screen and (max-width:925px){
+    width: ${(props) => (props.viewtype === "list" ? "100%" : "31%")};
+  }
+  @media screen and (max-width:767px){
+    width: ${(props) => (props.viewtype === "list" ? "100%" : "48%")};
+  }
+  @media screen and (max-width:559px){
+    width: ${(props) => (props.viewtype === "list" ? "100%" : "100%")};
+  }
 `;
 
 export const CardImage = styled("img")`
   padding: 0px;
   width: ${(props) => (props.viewtype === "list" ? "20%" : "100%")};
+`;
+
+export const ActionIcons = styled.div`
+  display:flex;
+  position:absolute;
+  right:10px;
+  top:10px;
+  & > img{
+    width:18px;
+    margin:0 5px;
+  }
 `;
 export const CardDesc = styled("div")`
   padding: 20px;
@@ -130,6 +172,9 @@ export const CardDescContent = styled.p`
 
 export const ProductViewer = styled.div`
   display: flex;
+  @media screen and (max-width:767px){
+    display:none;
+  }
 `;
 export const ProductView = styled.button`
   width: 35px;
@@ -177,6 +222,9 @@ export const FilterSearchContainer = styled.div`
   right: 0px;
   z-index: 300;
   background-color: ${AppStyleConstants.BG_COLORS.BG_WHITE};
+  @media screen and (max-width:559px){
+    width: 90%;
+  }
 `;
 
 export const FilterSearchTitle = styled.h3`

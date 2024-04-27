@@ -29,7 +29,6 @@ function App() {
       const filterItems = products?.filter(item => {
         return Object.values(item).join('').toLowerCase().includes(searchVal.toLowerCase());
       });
-      console.log({filterItems})
       setFilterProducts(filterItems);
     } else{
       setFilterProducts(products);
@@ -46,6 +45,8 @@ function App() {
       setProducts(data);
     }
   }
+
+ 
 
   useEffect(() => {
     getProducts();
@@ -64,7 +65,13 @@ function App() {
             filterProductsList={filterProducts}
              />
       </Suspense>
-      {openFilter && <FilterSearch onFilterProductsRange={(min, max) => filterProductsRange(min, max)} />}
+      {openFilter && 
+        <FilterSearch 
+          onFilterProductsRange={(min, max) => filterProductsRange(min, max)}
+          getProducts={getProducts}
+          setOpenFilter={setOpenFilter} 
+      />
+      }
      
     </STYLE.AppMainBg>
   );

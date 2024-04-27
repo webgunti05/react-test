@@ -24,6 +24,10 @@ const ProductsComponent = ({productsList, searchItem, filterProductsList}) => {
              {filterProductsList?.length > 0 && filterProductsList?.map(item => (
                  <STYLE.CardList key={item.id} viewtype={view}>
                      <STYLE.CardImage src={item?.category?.image} viewtype={view} />
+                     <STYLE.ActionIcons>
+                            <img src={IconsObj.LIKE_ICON} alt="Like" />
+                            <img src={IconsObj.VIEW_ICON} alt="View" />
+                     </STYLE.ActionIcons>
                      <STYLE.CardDesc viewtype={view}>
                          <STYLE.CardDescTitlte>{item.title}</STYLE.CardDescTitlte>
                          <STYLE.CardDescPrice>${item.price}</STYLE.CardDescPrice>
@@ -37,6 +41,10 @@ const ProductsComponent = ({productsList, searchItem, filterProductsList}) => {
             {productsList?.length > 0 && productsList?.map(item => (
                 <STYLE.CardList key={item.id} viewtype={view}>
                     <STYLE.CardImage src={item?.category?.image} viewtype={view} />
+                    <STYLE.ActionIcons>
+                            <img src={IconsObj.LIKE_ICON} alt="Like" />
+                            <img src={IconsObj.VIEW_ICON} alt="View" />
+                     </STYLE.ActionIcons>
                     <STYLE.CardDesc viewtype={view}>
                         <STYLE.CardDescTitlte>{item.title}</STYLE.CardDescTitlte>
                         <STYLE.CardDescPrice>${item.price}</STYLE.CardDescPrice>

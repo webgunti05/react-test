@@ -9,13 +9,14 @@ const TopBar = ({onSearchProducts, onOpenFilterSearch}) => {
 
             <STYLE.LeftHeader>
                 <STYLE.SearchInput onChange={onSearchProducts} placeholder={AppContentConstants.PLACEHOLDERS.SEARCH_PLACEHOLDER} />
-                <STYLE.FilterButton onClick={onOpenFilterSearch}>
-                    <STYLE.FilterIcon src={IconsObj.FILTERS_ICON}></STYLE.FilterIcon>
-                    {AppContentConstants.TITLES.FILTERS}
-                </STYLE.FilterButton>
+                
             </STYLE.LeftHeader>
 
             <STYLE.RightHeader>
+            <STYLE.FilterButton onClick={onOpenFilterSearch}>
+                    <STYLE.FilterIcon src={IconsObj.FILTERS_ICON}></STYLE.FilterIcon>
+                    {AppContentConstants.TITLES.FILTERS}
+                </STYLE.FilterButton>
                 <STYLE.FilterButton position="right">
                     <STYLE.FilterIcon src={IconsObj.SURPRISE_ICON}></STYLE.FilterIcon>
                     {AppContentConstants.TITLES.SURPRISE}
