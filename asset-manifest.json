@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/webgunti05/react-test/static/css/main.d1259018.css",
-    "main.js": "/webgunti05/react-test/static/js/main.4a124ca2.js",
-    "static/js/717.24be53ae.chunk.js": "/webgunti05/react-test/static/js/717.24be53ae.chunk.js",
-    "static/js/453.56f46472.chunk.js": "/webgunti05/react-test/static/js/453.56f46472.chunk.js",
-    "static/media/confetti.png": "/webgunti05/react-test/static/media/confetti.4ea37647b34b3fa72f56.png",
-    "static/media/view.png": "/webgunti05/react-test/static/media/view.c19b9e3590579a3ec888.png",
-    "static/media/heart.png": "/webgunti05/react-test/static/media/heart.c412cbaead4744166c20.png",
-    "index.html": "/webgunti05/react-test/index.html",
-    "main.d1259018.css.map": "/webgunti05/react-test/static/css/main.d1259018.css.map",
-    "main.4a124ca2.js.map": "/webgunti05/react-test/static/js/main.4a124ca2.js.map",
-    "717.24be53ae.chunk.js.map": "/webgunti05/react-test/static/js/717.24be53ae.chunk.js.map",
-    "453.56f46472.chunk.js.map": "/webgunti05/react-test/static/js/453.56f46472.chunk.js.map"
+    "main.css": "/webgunti05/reactTest/static/css/main.d1259018.css",
+    "main.js": "/webgunti05/reactTest/static/js/main.dab06eee.js",
+    "static/js/717.24be53ae.chunk.js": "/webgunti05/reactTest/static/js/717.24be53ae.chunk.js",
+    "static/js/453.56f46472.chunk.js": "/webgunti05/reactTest/static/js/453.56f46472.chunk.js",
+    "static/media/confetti.png": "/webgunti05/reactTest/static/media/confetti.4ea37647b34b3fa72f56.png",
+    "static/media/view.png": "/webgunti05/reactTest/static/media/view.c19b9e3590579a3ec888.png",
+    "static/media/heart.png": "/webgunti05/reactTest/static/media/heart.c412cbaead4744166c20.png",
+    "index.html": "/webgunti05/reactTest/index.html",
+    "main.d1259018.css.map": "/webgunti05/reactTest/static/css/main.d1259018.css.map",
+    "main.dab06eee.js.map": "/webgunti05/reactTest/static/js/main.dab06eee.js.map",
+    "717.24be53ae.chunk.js.map": "/webgunti05/reactTest/static/js/717.24be53ae.chunk.js.map",
+    "453.56f46472.chunk.js.map": "/webgunti05/reactTest/static/js/453.56f46472.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d1259018.css",
-    "static/js/main.4a124ca2.js"
+    "static/js/main.dab06eee.js"
   ]
 }
