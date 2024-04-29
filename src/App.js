@@ -43,6 +43,7 @@ function App() {
     const data = await filterProductsByRange(min, max);
     if(data){
       setProducts(data);
+      setOpenFilter(false);
     }
   }
 
